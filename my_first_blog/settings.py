@@ -24,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e64alc$8#caxs4hibk_(xh%(335ngr8kfp2w^%f9cm3exd$*2!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("IS_PRODUCTION", True)
+# DEBUG = getenv("IS_PRODUCTION", True)
+DEBUG = False
 
-ALLOWED_HOSTS = [getenv("APP_HOST")]
+ALLOWED_HOSTS = ["54.91.56.191"]
 
 
 # Application definition
@@ -77,12 +78,14 @@ WSGI_APPLICATION = 'my_first_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        "USER": "django-blog",
-        "PASSWORD": "12345678",
-        "HOST": "django-blog.c0pi6r55sq3n.ap-south-1.rds.amazonaws.com",
-        "PORT": "5432"
+         'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'postgres',
+        # "USER": "django-blog",
+        # "PASSWORD": "12345678",
+        # "HOST": "django-blog.c0pi6r55sq3n.ap-south-1.rds.amazonaws.com",
+        # "PORT": "5432"
     }
 }
 
